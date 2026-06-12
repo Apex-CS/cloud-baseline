@@ -100,7 +100,7 @@ module "baseline" {
 
 resource "azurerm_linux_web_app" "api" {
   resource_group_name = module.baseline.resource_group_name
-  location            = module.baseline.location  # derivado del data source
+  location            = module.baseline.location  
   # ...
 }
 ```
