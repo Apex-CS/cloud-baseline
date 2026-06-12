@@ -7,8 +7,7 @@
 # deployments/payments-api/main.tf
 
 module "baseline" {
-  source  = "app.terraform.io/<ORG>/baseline/multicloud//modules/aws"
-  version = "~> 1.0"
+  source  = "github.com/Apex-CS/cloud-baseline/modules/aws?ref=v0.1"
 
   project_name = "payments-api"
   environment  = "prod"
@@ -35,15 +34,13 @@ resource "aws_s3_bucket" "assets" {
 
 ```hcl
 module "baseline" {
-  source  = "app.terraform.io/<ORG>/baseline/multicloud//modules/azure"
-  version = "~> 1.0"
+  source  = "github.com/Apex-CS/cloud-baseline/modules/azure?ref=v0.1"
 
   project_name = "payments-api"
   environment  = "prod"
   owner        = "jdoe@apexsystems.com"
   team         = "backend"
   cost_center  = "innovation-center"
-  location     = "eastus"
 }
 
 resource "azurerm_storage_account" "main" {
@@ -62,8 +59,7 @@ resource "azurerm_storage_account" "main" {
 ### AWS
 ```hcl
 module "baseline" {
-  source  = "app.terraform.io/<ORG>/baseline/multicloud//modules/aws"
-  version = "~> 2.0"
+  source  = "github.com/Apex-CS/cloud-baseline/modules/aws?ref=v0.1"
 
   # ...other vars...
   enable_nat_gateway   = var.environment == "prod"
@@ -89,8 +85,7 @@ resource "aws_db_subnet_group" "main" {
 ### Azure
 ```hcl
 module "baseline" {
-  source  = "app.terraform.io/<ORG>/baseline/multicloud//modules/azure"
-  version = "~> 2.0"
+  source  = "github.com/Apex-CS/cloud-baseline/modules/azure?ref=v0.1"
 
   # ...other vars...
   resource_group_name   = "rg-payments-prod" 
