@@ -1,0 +1,9 @@
+output "name_prefix"         { value = module.base.name_prefix }
+output "tags"                { value = module.base.tags }
+output "resource_group_name" { value = data.azurerm_resource_group.main.name }
+output "resource_group_id"   { value = data.azurerm_resource_group.main.id }
+output "location"            { value = data.azurerm_resource_group.main.location }
+output "vnet_id"             { value = azurerm_virtual_network.main.id }
+output "vnet_name"           { value = azurerm_virtual_network.main.name }
+output "public_subnet_id"    { value = azurerm_subnet.public.id }
+output "private_subnet_id"   { value = azurerm_subnet.private.id }
